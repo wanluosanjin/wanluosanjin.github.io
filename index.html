@@ -14,7 +14,6 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    <div id="app"></div>
     <template>
         <button @click="count++">Count is: {{ count }}</button>
     </template>
@@ -33,10 +32,18 @@
     }).mount('#app')
     </script>
   </body>
-  <script setup>
-    import { ref } from 'vue'
-    const count = ref(0)
-    </script>
+  <script type="module">
+    import { createApp, ref } from 'vue'
+  
+    createApp({
+      setup() {
+        const message = ref('Hello Vue!')
+        return {
+          message
+        }
+      }
+    }).mount('#app')
+  </script>
     
     
     <style scoped>
