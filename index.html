@@ -19,31 +19,23 @@
     </template>
     <div id="app">{{ message }}</div>
 
-    <script>
-    const { createApp, ref } = Vue
+<script>
+  const { createApp, ref } = Vue
 
-    createApp({
-        setup() {
-        const message = ref('Hello vue!')
-        return {
-            message
-        }
-        }
-    }).mount('#app')
-    </script>
-  </body>
-  <script type="module">
-    import { createApp, ref } from 'vue'
-  
-    createApp({
-      setup() {
-        const message = ref('Hello Vue!')
-        return {
-          message
-        }
+  createApp({
+    setup() {
+      const message = ref('Hello vue!')
+      return {
+        message
       }
-    }).mount('#app')
-  </script>
+    }
+  }).mount('#app')
+</script>
+  </body>
+  <script type="module" setup>
+    import { ref } from 'vue'
+    const count = ref(0)
+    </script>
     
     
     <style scoped>
